@@ -9,7 +9,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f0; color: #2c2c2c; }
 nav { background: #1a1a2e; display: flex; overflow-x: auto; position: sticky; top: 0; z-index: 100; }
-nav button { background: none; border: none; color: #aaa; padding: 14px 16px; font-size: 13px; cursor: pointer; white-space: nowrap; font-weight: 500; }
+nav button { background: none; border: none; color: #aaa; padding: 14px 14px; font-size: 12px; cursor: pointer; white-space: nowrap; font-weight: 500; }
 nav button.active, nav button:hover { color: #fff; background: #c0392b; }
 .section { display: none; padding: 16px; max-width: 780px; margin: 0 auto; }
 .section.active { display: block; }
@@ -32,14 +32,13 @@ nav button.active, nav button:hover { color: #fff; background: #c0392b; }
 input[type="text"], input[type="number"], input[type="date"], textarea, select { width: 100%; padding: 9px 11px; border: 1px solid #ddd; border-radius: 8px; font-size: 13px; font-family: inherit; background: #fafafa; }
 input:focus, textarea:focus, select:focus { outline: none; border-color: #c0392b; background: #fff; }
 textarea { resize: vertical; min-height: 55px; }
-.exercise-row { display: grid; grid-template-columns: 1fr 80px 70px 55px 32px; gap: 6px; align-items: center; margin-bottom: 8px; }
-.exercise-row input { padding: 8px 6px; }
-.exercise-header { display: grid; grid-template-columns: 1fr 80px 70px 55px 32px; gap: 6px; margin-bottom: 5px; }
+.exercise-row { display: grid; grid-template-columns: 1fr 75px 65px 52px 32px; gap: 5px; align-items: center; margin-bottom: 7px; }
+.exercise-row input { padding: 8px 5px; }
+.exercise-header { display: grid; grid-template-columns: 1fr 75px 65px 52px 32px; gap: 5px; margin-bottom: 5px; }
 .exercise-header span { font-size: 10px; font-weight: 700; color: #aaa; text-align: center; text-transform: uppercase; }
 .exercise-header span:first-child { text-align: left; }
-.remove-btn { background: #fee; border: 1px solid #fcc; border-radius: 6px; color: #c0392b; cursor: pointer; font-size: 14px; padding: 0; height: 32px; width: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.remove-btn { background: #fee; border: 1px solid #fcc; border-radius: 6px; color: #c0392b; cursor: pointer; font-size: 13px; height: 32px; width: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .add-exercise-btn { background: #f0f7ff; border: 1px dashed #2980b9; border-radius: 8px; color: #2980b9; cursor: pointer; font-size: 13px; font-weight: 600; padding: 9px; width: 100%; margin-top: 4px; }
-.add-exercise-btn:hover { background: #e0efff; }
 .save-btn { background: #c0392b; color: white; border: none; padding: 11px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 10px; }
 .save-btn:disabled { background: #ccc; cursor: not-allowed; }
 .saved-msg { text-align: center; font-size: 13px; font-weight: 600; margin-top: 7px; display: none; }
@@ -81,23 +80,30 @@ textarea { resize: vertical; min-height: 55px; }
 .coach-label { font-size: 10px; font-weight: 700; text-transform: uppercase; color: #e67e22; margin-bottom: 4px; }
 .suggest-row { background: #f0f7ff; border: 1px solid #d0e8ff; border-radius: 8px; padding: 10px 12px; margin-bottom: 6px; font-size: 13px; }
 .suggest-row strong { color: #1a1a2e; }
-.suggest-row .suggest-sub { font-size: 11px; color: #888; margin-top: 2px; }
+.suggest-sub { font-size: 11px; color: #888; margin-top: 2px; }
+.cardio-box { background: #f0f7ff; border: 1px solid #d0e8ff; border-radius: 10px; padding: 14px; margin-bottom: 14px; }
+.cardio-box h3 { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.cardio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.cardio-grid label { font-size: 11px; font-weight: 600; color: #666; display: block; margin-bottom: 3px; }
+.cardio-stat-bar { background: white; border-radius: 8px; padding: 10px 12px; margin-top: 8px; font-size: 12px; color: #555; line-height: 1.9; display: none; }
+.session-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.session-tag { background: #1a1a2e; color: white; font-size: 11px; padding: 5px 10px; border-radius: 12px; cursor: pointer; border: none; font-weight: 600; }
+.session-tag:hover, .session-tag.active { background: #c0392b; }
+.date-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.date-row label { font-size: 12px; font-weight: 600; color: #666; white-space: nowrap; }
+.pr-row { display: grid; grid-template-columns: 1fr 68px 68px 68px; gap: 6px; align-items: center; margin-bottom: 7px; }
+.pr-row label { font-size: 12px; font-weight: 600; color: #444; }
+.pr-header { display: grid; grid-template-columns: 1fr 68px 68px 68px; gap: 6px; margin-bottom: 5px; }
+.pr-header span { font-size: 10px; font-weight: 700; color: #aaa; text-align: center; text-transform: uppercase; }
+.pr-header span:first-child { text-align: left; }
 .sync-dot { position: fixed; bottom: 16px; right: 16px; background: #27ae60; color: white; padding: 7px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; display: none; z-index: 200; }
 .sync-dot.err { background: #c0392b; }
 .loading { color: #aaa; font-size: 13px; padding: 12px 0; }
-.date-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-.date-row label { font-size: 12px; font-weight: 600; color: #666; white-space: nowrap; }
-.date-row input { flex: 1; }
-.session-tag { display: inline-block; background: #1a1a2e; color: white; font-size: 11px; padding: 3px 8px; border-radius: 12px; margin: 2px; cursor: pointer; }
-.session-tag:hover { background: #c0392b; }
-.pr-row { display: grid; grid-template-columns: 1fr 70px 70px 70px; gap: 6px; align-items: center; margin-bottom: 7px; }
-.pr-row label { font-size: 12px; font-weight: 600; color: #444; }
-.pr-header { display: grid; grid-template-columns: 1fr 70px 70px 70px; gap: 6px; margin-bottom: 5px; }
-.pr-header span { font-size: 10px; font-weight: 700; color: #aaa; text-align: center; text-transform: uppercase; }
-.pr-header span:first-child { text-align: left; }
+.section-divider { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; margin: 14px 0 8px; letter-spacing: 0.5px; }
 @media (max-width: 480px) {
-  .exercise-row { grid-template-columns: 1fr 70px 60px 50px 30px; }
+  .exercise-row { grid-template-columns: 1fr 68px 58px 48px 28px; }
   .two-col { grid-template-columns: 1fr; }
+  .cardio-grid { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -115,7 +121,7 @@ textarea { resize: vertical; min-height: 55px; }
 
 <div id="sync-dot" class="sync-dot"></div>
 
-<!-- TODAY -->
+<!-- ===== TODAY ===== -->
 <div id="today" class="section active">
   <p class="section-title">Daily Check-In</p>
   <p class="section-sub" id="today-label"></p>
@@ -149,7 +155,7 @@ textarea { resize: vertical; min-height: 55px; }
   </div>
   <div class="card">
     <h2>🏋️ Today's Training</h2>
-    <input type="text" id="today-workout" placeholder="e.g. Upper body, Badminton, Rest day, Beach run..." style="margin-bottom:9px;">
+    <input type="text" id="today-workout" placeholder="e.g. Upper body weights, Badminton, Rest day..." style="margin-bottom:9px;">
     <textarea id="today-workout-notes" placeholder="Notes... (optional)" rows="2"></textarea>
   </div>
   <div class="card">
@@ -178,16 +184,20 @@ textarea { resize: vertical; min-height: 55px; }
   <p class="saved-msg" id="today-msg"></p>
 </div>
 
-<!-- COACH -->
+<!-- ===== COACH ===== -->
 <div id="coach" class="section">
   <p class="section-title">Your Adaptive Coach</p>
-  <p class="section-sub">Recommendations built from your actual logged data. Updates every time you log.</p>
+  <p class="section-sub">Updates every time you log. The more you track, the smarter it gets.</p>
   <div class="coach-box" id="coach-main">
     <h2>🤖 This Week's Analysis</h2>
     <div class="loading">Loading your data...</div>
   </div>
   <div class="card" id="coach-workout">
-    <h2>💪 Suggested Exercises & Target Weights</h2>
+    <h2>💪 Next Workout Suggestions</h2>
+    <div class="loading">Loading...</div>
+  </div>
+  <div class="card" id="coach-cardio">
+    <h2>🏃 Cardio Trends</h2>
     <div class="loading">Loading...</div>
   </div>
   <div class="card" id="coach-nutrition">
@@ -200,57 +210,93 @@ textarea { resize: vertical; min-height: 55px; }
   </div>
 </div>
 
-<!-- WORKOUT LOG -->
+<!-- ===== WORKOUT LOG ===== -->
 <div id="workouts" class="section">
   <p class="section-title">Log a Workout</p>
-  <p class="section-sub">Any day, any exercises. Add as many as you want.</p>
+  <p class="section-sub">Any day, any activity. Weights, cardio, or both.</p>
 
   <div class="card">
     <div class="date-row">
       <label>Date:</label>
       <input type="date" id="w-date">
     </div>
-    <div style="margin-bottom:12px;">
-      <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:6px;">Session type (tap or type below):</label>
-      <div>
-        <span class="session-tag" onclick="setSessionType('Upper Body')">Upper Body</span>
-        <span class="session-tag" onclick="setSessionType('Lower Body')">Lower Body</span>
-        <span class="session-tag" onclick="setSessionType('Full Body')">Full Body</span>
-        <span class="session-tag" onclick="setSessionType('Cardio')">Cardio</span>
-        <span class="session-tag" onclick="setSessionType('Badminton')">Badminton</span>
-        <span class="session-tag" onclick="setSessionType('Run')">Run</span>
-        <span class="session-tag" onclick="setSessionType('Bike')">Bike</span>
-        <span class="session-tag" onclick="setSessionType('Core')">Core</span>
-        <span class="session-tag" onclick="setSessionType('Other')">Other</span>
+
+    <p class="section-divider">Session Type</p>
+    <div class="session-tags" id="session-tag-btns">
+      <button class="session-tag" onclick="setSessionType('Upper Body',this)">Upper Body</button>
+      <button class="session-tag" onclick="setSessionType('Lower Body',this)">Lower Body</button>
+      <button class="session-tag" onclick="setSessionType('Full Body',this)">Full Body</button>
+      <button class="session-tag" onclick="setSessionType('Badminton',this)">🏸 Badminton</button>
+      <button class="session-tag" onclick="setSessionType('Run',this)">🏃 Run</button>
+      <button class="session-tag" onclick="setSessionType('Bike',this)">🚴 Bike</button>
+      <button class="session-tag" onclick="setSessionType('Swim',this)">🏊 Swim</button>
+      <button class="session-tag" onclick="setSessionType('Walk',this)">🚶 Walk</button>
+      <button class="session-tag" onclick="setSessionType('Core',this)">Core</button>
+      <button class="session-tag" onclick="setSessionType('Other',this)">Other</button>
+    </div>
+    <input type="text" id="w-session-type" placeholder="Or type session name..." style="margin-bottom:14px;" oninput="onSessionTypeInput(this.value)">
+
+    <!-- CARDIO TRACKER — shown for cardio sessions -->
+    <div id="cardio-section" style="display:none;">
+      <div class="cardio-box">
+        <h3>🏃 Cardio Details</h3>
+        <div class="cardio-grid">
+          <div>
+            <label>Duration (minutes)</label>
+            <input type="number" id="c-duration" placeholder="e.g. 45" min="1" oninput="calcCardioStats()">
+          </div>
+          <div>
+            <label>Distance (km)</label>
+            <input type="number" id="c-distance" placeholder="e.g. 5.2" step="0.1" oninput="calcCardioStats()">
+          </div>
+          <div>
+            <label>Avg Heart Rate (bpm)</label>
+            <input type="number" id="c-hr" placeholder="e.g. 145" min="60" max="220">
+          </div>
+          <div>
+            <label>Feeling (1–10)</label>
+            <input type="number" id="c-feeling" placeholder="e.g. 8" min="1" max="10">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:11px;font-weight:600;color:#666;display:block;margin-bottom:3px;">Notes</label>
+          <input type="text" id="c-notes" placeholder="e.g. 3 games, felt strong — or hilly 5K route">
+        </div>
+        <div class="cardio-stat-bar" id="cardio-stats">
+          <div id="cardio-stats-content"></div>
+        </div>
       </div>
     </div>
-    <input type="text" id="w-session-type" placeholder="Session type (e.g. Upper Body, Run, Badminton...)" style="margin-bottom:12px;">
 
-    <div class="exercise-header">
-      <span>Exercise</span><span>Weight (lbs)</span><span>Reps</span><span>Sets</span><span></span>
+    <!-- WEIGHTS SECTION — shown for weight sessions -->
+    <div id="weights-section">
+      <p class="section-divider">Exercises</p>
+      <div class="exercise-header">
+        <span>Exercise</span><span>Weight lbs</span><span>Reps</span><span>Sets</span><span></span>
+      </div>
+      <div id="exercise-rows"></div>
+      <button class="add-exercise-btn" onclick="addExerciseRow()">+ Add Exercise</button>
     </div>
-    <div id="exercise-rows"></div>
-    <button class="add-exercise-btn" onclick="addExerciseRow()">+ Add Exercise</button>
 
-    <div style="margin-top:12px;">
-      <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:4px;">Cardio / notes</label>
-      <textarea id="w-notes" rows="2" placeholder="e.g. 30 min run at 6:30 pace. Felt strong on bench today."></textarea>
+    <div style="margin-top:14px;">
+      <label style="font-size:12px;font-weight:600;color:#666;display:block;margin-bottom:4px;">Additional notes</label>
+      <textarea id="w-notes" rows="2" placeholder="How did it feel? Any PRs? Anything to note..."></textarea>
     </div>
     <button class="save-btn" id="workout-btn" onclick="saveWorkout()">Save Workout ✓</button>
     <p class="saved-msg" id="workout-msg"></p>
   </div>
 </div>
 
-<!-- HISTORY -->
+<!-- ===== HISTORY ===== -->
 <div id="history" class="section">
   <p class="section-title">Workout History</p>
-  <p class="section-sub">All your logged sessions.</p>
+  <p class="section-sub">All sessions, most recent first.</p>
   <div class="card">
     <div id="workout-history"><div class="loading">Loading...</div></div>
   </div>
 </div>
 
-<!-- NUTRITION -->
+<!-- ===== NUTRITION ===== -->
 <div id="nutrition" class="section">
   <p class="section-title">Nutrition Guide</p>
   <p class="section-sub">Built for your Chinese-Canadian diet and metabolic profile.</p>
@@ -266,25 +312,25 @@ textarea { resize: vertical; min-height: 55px; }
   <div class="card">
     <h2>🍳 Meal by Meal</h2>
     <h3>Breakfast — keep & build</h3>
-    <p>2 eggs = ~12g. Add Greek yogurt 0% fat or protein shake to hit 25–30g. Coffee is fine.</p>
+    <p>2 eggs = ~12g protein. Add Greek yogurt 0% fat or protein shake to hit 25–30g. Coffee is fine.</p>
     <h3>Lunch — your biggest lever</h3>
     <div class="highlight red">Current: Large rice or noodles, low protein, 1–2pm → goes to fat storage.</div>
     <div class="highlight green">Target: Half carb portion + 100–150g cooked protein + as much veg as possible.</div>
     <h3>Dinner — mostly keep it</h3>
     <p>Your wife's dinners are good. Keep protein and veg. Just eat no later than 7pm.</p>
     <h3>Evening snacking — break this habit</h3>
-    <div class="highlight"><strong>Phase 1 (Wk 1–4):</strong> Swap chips/chocolate/ice cream → Greek yogurt, cottage cheese, or protein shake.<br><br><strong>Phase 2 (Wk 5+):</strong> Hard kitchen close 9pm. Water or herbal tea only after.</div>
+    <div class="highlight"><strong>Phase 1 (Wk 1–4):</strong> Swap chips/chocolate/ice cream → Greek yogurt, cottage cheese, or protein shake.<br><br><strong>Phase 2 (Wk 5+):</strong> Hard kitchen close at 9pm. Water or herbal tea only after.</div>
     <h3>Supplements worth taking</h3>
     <ul>
-      <li><strong>Protein powder</strong> — to hit 130g daily target</li>
-      <li><strong>Creatine monohydrate</strong> — 5g every day. Best evidence for strength and body comp</li>
-      <li><strong>Vitamin D3</strong> — 2000–4000 IU. Calgary winters + indoor job</li>
-      <li><strong>Magnesium glycinate</strong> — 300–400mg before bed. Improves sleep quality measurably</li>
+      <li><strong>Protein powder</strong> — whey or plant-based, to hit 130g daily</li>
+      <li><strong>Creatine monohydrate</strong> — 5g every day, best evidence for strength and body comp</li>
+      <li><strong>Vitamin D3</strong> — 2000–4000 IU, Calgary winters + indoor job</li>
+      <li><strong>Magnesium glycinate</strong> — 300–400mg before bed, improves sleep quality measurably</li>
     </ul>
   </div>
 </div>
 
-<!-- PROGRESS -->
+<!-- ===== PROGRESS ===== -->
 <div id="progress" class="section">
   <p class="section-title">Progress</p>
   <p class="section-sub">Weigh in every Monday. Same time, before eating.</p>
@@ -305,7 +351,7 @@ textarea { resize: vertical; min-height: 55px; }
   </div>
   <div class="card">
     <h2>💪 Personal Records</h2>
-    <p style="font-size:12px;color:#888;margin-bottom:10px;">Auto-updated when you log workouts. Edit manually if needed.</p>
+    <p style="font-size:12px;color:#888;margin-bottom:10px;">Auto-updated when you log workouts. Add any exercise.</p>
     <div class="pr-header"><span>Exercise</span><span>Start</span><span>Best</span><span>Goal</span></div>
     <div id="pr-rows"></div>
     <button class="add-exercise-btn" onclick="addPRRow()" style="margin-top:6px;">+ Add Exercise PR</button>
@@ -318,10 +364,10 @@ textarea { resize: vertical; min-height: 55px; }
   </div>
 </div>
 
-<!-- PLAN -->
+<!-- ===== PLAN ===== -->
 <div id="plan" class="section">
   <p class="section-title">Your 12-Week Plan</p>
-  <p class="section-sub">The full roadmap. Updated as you progress.</p>
+  <p class="section-sub">The full roadmap.</p>
   <div class="card">
     <h2>📅 Roadmap</h2>
     <div class="week-row"><span class="wk">Wk 1–3</span><span class="focus">Foundation — Fix lunch protein ratio, 9:30pm work cutoff, add overhead press and face pulls</span><span class="week-badge active">NOW</span></div>
@@ -332,12 +378,12 @@ textarea { resize: vertical; min-height: 55px; }
   </div>
   <div class="card">
     <h2>📆 Suggested Weekly Split</h2>
-    <p style="font-size:13px;color:#666;margin-bottom:10px;">This is a guide, not a cage. Log whatever you actually do.</p>
-    <div class="highlight blue"><strong>Tuesday</strong> — Upper Body Strength: Bench 3×5, OHP 3×10, Row 3×8, Face Pulls 3×15, Curls 2×12</div>
-    <div class="highlight blue" style="margin-top:6px;"><strong>Wednesday</strong> — Badminton 1 hour (keep as is)</div>
+    <p style="font-size:13px;color:#666;margin-bottom:10px;">A guide, not a cage. Log whatever you actually do.</p>
+    <div class="highlight blue"><strong>Tuesday</strong> — Upper Body: Bench 3×5, OHP 3×10, Row 3×8, Face Pulls 3×15, Curls 2×12</div>
+    <div class="highlight blue" style="margin-top:6px;"><strong>Wednesday</strong> — Badminton 1 hour</div>
     <div class="highlight blue" style="margin-top:6px;"><strong>Thu or Fri</strong> — Lower Body + Core: Squat 3×8, RDL 3×10, Lunges, Plank, Ab work</div>
     <div class="highlight blue" style="margin-top:6px;"><strong>Saturday</strong> — Full Body + Cardio: Deadlift 3×5, Arnold Press 3×10, Pulldowns 3×8, 30 min run or bike</div>
-    <div class="highlight green" style="margin-top:8px;">📌 <strong>Progressive overload:</strong> Every 2 weeks add 5 lbs to main lifts OR 1 rep per set. Coach tab tracks this automatically from your logs.</div>
+    <div class="highlight green" style="margin-top:8px;">📌 Every 2 weeks: add 5 lbs to main lifts OR 1 rep per set. Coach tab tracks this from your logs.</div>
   </div>
   <div class="card">
     <h2>😴 Sleep Protocol</h2>
@@ -346,7 +392,7 @@ textarea { resize: vertical; min-height: 55px; }
       <li><strong>9:30 PM:</strong> Hard stop on all work</li>
       <li><strong>9:30–11:30 PM:</strong> No doomscrolling — reading, light TV, conversation</li>
       <li><strong>Phone:</strong> Face down or charging outside bedroom</li>
-      <li><strong>Magnesium glycinate</strong> 300mg before bed — improves deep sleep quality</li>
+      <li><strong>Magnesium glycinate</strong> 300mg before bed</li>
     </ul>
   </div>
 </div>
@@ -357,10 +403,22 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const { createClient } = supabase;
 const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
+const CARDIO_TYPES = ['badminton','run','bike','swim','walk','cardio','rowing','elliptical','hike','cycling'];
+const DEFAULT_EXERCISES = [
+  {name:'Bench Press',r:'5',s:'3'},
+  {name:'Overhead Press',r:'10',s:'3'},
+  {name:'Squat',r:'8',s:'3'},
+  {name:'Deadlift',r:'5',s:'3'},
+  {name:'Bent-Over Row',r:'8',s:'3'},
+  {name:'Face Pulls',r:'15',s:'3'},
+  {name:'Lateral Raises',r:'15',s:'3'},
+];
+
 function todayStr(){return new Date().toISOString().split('T')[0];}
 function fmtDate(d){return new Date(d+'T12:00:00').toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'});}
 function flash(m,err=false){const e=document.getElementById('sync-dot');e.textContent=m;e.className='sync-dot'+(err?' err':'');e.style.display='block';setTimeout(()=>e.style.display='none',2500);}
 function showMsg(id,text,err=false){const e=document.getElementById(id);e.textContent=text;e.className='saved-msg '+(err?'error':'success');e.style.display='block';setTimeout(()=>e.style.display='none',3000);}
+function isCardioType(val){return CARDIO_TYPES.some(c=>val.toLowerCase().includes(c));}
 
 document.getElementById('today-label').textContent=new Date().toLocaleDateString('en-CA',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 document.getElementById('wt-date').value=todayStr();
@@ -371,70 +429,112 @@ function showSection(id,btn){
   document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  if(id==='progress')loadProgress();
-  if(id==='history')loadWorkoutHistory();
-  if(id==='coach')loadCoach();
-  if(id==='workouts')initWorkoutLog();
+  if(id==='progress') loadProgress();
+  if(id==='history') loadWorkoutHistory();
+  if(id==='coach') loadCoach();
+  if(id==='workouts') initWorkoutLog();
 }
 
 function toggleCheck(el){const cb=el.querySelector('input');cb.checked=!cb.checked;el.classList.toggle('checked',cb.checked);}
 function setStar(id,val){const el=document.getElementById(id);el.dataset.val=val;el.querySelectorAll('span').forEach((s,i)=>s.classList.toggle('on',i<val));}
-function setSessionType(t){document.getElementById('w-session-type').value=t;}
+
+// ===== SESSION TYPE =====
+function setSessionType(t, btn) {
+  document.getElementById('w-session-type').value = t;
+  document.querySelectorAll('.session-tag').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  applySessionLayout(t);
+}
+
+function onSessionTypeInput(val) {
+  document.querySelectorAll('.session-tag').forEach(b=>b.classList.remove('active'));
+  applySessionLayout(val);
+}
+
+function applySessionLayout(val) {
+  const cardio = isCardioType(val);
+  document.getElementById('cardio-section').style.display = cardio ? 'block' : 'none';
+  document.getElementById('weights-section').style.display = cardio ? 'none' : 'block';
+}
+
+// ===== CARDIO CALCULATOR =====
+function calcCardioStats() {
+  const duration = parseFloat(document.getElementById('c-duration').value);
+  const distance = parseFloat(document.getElementById('c-distance').value);
+  const type = document.getElementById('w-session-type').value.toLowerCase();
+  const statsEl = document.getElementById('cardio-stats');
+  const contentEl = document.getElementById('cardio-stats-content');
+  if (!duration && !distance) { statsEl.style.display='none'; return; }
+  const parts = [];
+  if (duration && distance) {
+    const paceRaw = duration / distance;
+    const pm = Math.floor(paceRaw);
+    const ps = Math.round((paceRaw - pm) * 60);
+    parts.push(`⏱ Pace: ${pm}:${ps.toString().padStart(2,'0')}/km`);
+    parts.push(`🚀 Speed: ${(distance/duration*60).toFixed(1)} km/h`);
+  }
+  if (duration) {
+    let met = 7;
+    if(type.includes('run')) met=9.8;
+    else if(type.includes('bike')||type.includes('cycl')) met=8;
+    else if(type.includes('swim')) met=8.3;
+    else if(type.includes('badminton')) met=7;
+    else if(type.includes('walk')) met=4;
+    const cals = Math.round(met * 73 * (duration/60));
+    parts.push(`🔥 Est. calories: ~${cals} kcal`);
+  }
+  if(parts.length){contentEl.innerHTML=parts.join('&nbsp;&nbsp;·&nbsp;&nbsp;');statsEl.style.display='block';}
+}
 
 // ===== EXERCISE ROWS =====
-let exerciseCount = 0;
-const DEFAULT_EXERCISES = [
-  {name:'Bench Press',w:'',r:'5',s:'3'},
-  {name:'Overhead Press',w:'',r:'10',s:'3'},
-  {name:'Squat',w:'',r:'8',s:'3'},
-  {name:'Deadlift',w:'',r:'5',s:'3'},
-  {name:'Bent-Over Row',w:'',r:'8',s:'3'},
-  {name:'Face Pulls',w:'',r:'15',s:'3'},
-  {name:'Lateral Raises',w:'',r:'15',s:'3'},
-];
+let exCount = 0;
 
-async function initWorkoutLog(){
-  // Pre-fill with last session's weights for context
-  const {data:last}=await db.from('workouts').select('exercises').order('workout_date',{ascending:false}).limit(1).maybeSingle();
-  const container=document.getElementById('exercise-rows');
-  container.innerHTML='';
-  exerciseCount=0;
-  if(last?.exercises?.length){
-    last.exercises.forEach(ex=>addExerciseRow(ex.name,ex.weight,'',ex.sets));
+async function initWorkoutLog() {
+  document.getElementById('exercise-rows').innerHTML='';
+  exCount=0;
+  document.getElementById('w-session-type').value='';
+  document.getElementById('w-notes').value='';
+  document.getElementById('c-duration').value='';
+  document.getElementById('c-distance').value='';
+  document.getElementById('c-hr').value='';
+  document.getElementById('c-feeling').value='';
+  document.getElementById('c-notes').value='';
+  document.getElementById('cardio-stats').style.display='none';
+  document.getElementById('cardio-section').style.display='none';
+  document.getElementById('weights-section').style.display='block';
+  document.querySelectorAll('.session-tag').forEach(b=>b.classList.remove('active'));
+  document.getElementById('w-date').value=todayStr();
+
+  const {data:last}=await db.from('workouts').select('exercises,session_type').order('workout_date',{ascending:false}).limit(1).maybeSingle();
+  if(last?.exercises?.length && !isCardioType(last.session_type||'')){
+    last.exercises.forEach(ex=>addExerciseRow(ex.name,ex.weight||'',ex.reps||'',ex.sets||3));
   } else {
-    DEFAULT_EXERCISES.forEach(ex=>addExerciseRow(ex.name,ex.w,ex.r,ex.s));
+    DEFAULT_EXERCISES.forEach(ex=>addExerciseRow(ex.name,'',ex.r,ex.s));
   }
 }
 
 function addExerciseRow(name='',weight='',reps='',sets='3'){
-  const id=exerciseCount++;
+  const id=exCount++;
   const row=document.createElement('div');
   row.className='exercise-row';
-  row.id=`ex-row-${id}`;
+  row.id=`ex-${id}`;
   row.innerHTML=`
-    <input type="text" id="ex-name-${id}" placeholder="Exercise name" value="${name}">
-    <input type="number" id="ex-w-${id}" placeholder="lbs" value="${weight}" style="text-align:center;">
-    <input type="number" id="ex-r-${id}" placeholder="reps" value="${reps}" style="text-align:center;">
-    <input type="number" id="ex-s-${id}" placeholder="sets" value="${sets}" style="text-align:center;">
-    <button class="remove-btn" onclick="removeExerciseRow(${id})">✕</button>
-  `;
+    <input type="text" id="en-${id}" placeholder="Exercise name" value="${name}">
+    <input type="number" id="ew-${id}" placeholder="lbs" value="${weight}" style="text-align:center;">
+    <input type="number" id="er-${id}" placeholder="reps" value="${reps}" style="text-align:center;">
+    <input type="number" id="es-${id}" placeholder="sets" value="${sets}" style="text-align:center;">
+    <button class="remove-btn" onclick="document.getElementById('ex-${id}').remove()">✕</button>`;
   document.getElementById('exercise-rows').appendChild(row);
 }
 
-function removeExerciseRow(id){
-  const row=document.getElementById(`ex-row-${id}`);
-  if(row) row.remove();
-}
-
 function getExercises(){
-  const rows=document.querySelectorAll('#exercise-rows .exercise-row');
   const exercises=[];
-  rows.forEach(row=>{
-    const id=row.id.replace('ex-row-','');
-    const name=document.getElementById(`ex-name-${id}`)?.value?.trim();
-    const weight=parseFloat(document.getElementById(`ex-w-${id}`)?.value)||null;
-    const reps=parseInt(document.getElementById(`ex-r-${id}`)?.value)||null;
-    const sets=parseInt(document.getElementById(`ex-s-${id}`)?.value)||null;
+  document.querySelectorAll('#exercise-rows .exercise-row').forEach(row=>{
+    const id=row.id.replace('ex-','');
+    const name=document.getElementById(`en-${id}`)?.value?.trim();
+    const weight=parseFloat(document.getElementById(`ew-${id}`)?.value)||null;
+    const reps=parseInt(document.getElementById(`er-${id}`)?.value)||null;
+    const sets=parseInt(document.getElementById(`es-${id}`)?.value)||null;
     if(name) exercises.push({name,weight,reps,sets});
   });
   return exercises;
@@ -472,18 +572,27 @@ async function saveToday(){
 async function saveWorkout(){
   const btn=document.getElementById('workout-btn');
   btn.disabled=true;btn.textContent='Saving...';
-  const exercises=getExercises();
-  if(!exercises.length){showMsg('workout-msg','Add at least one exercise',true);btn.disabled=false;btn.textContent='Save Workout ✓';return;}
+  const sessionType=document.getElementById('w-session-type').value||'';
+  const cardio=isCardioType(sessionType);
+  const exercises=cardio?[]:getExercises();
   const row={
     workout_date:document.getElementById('w-date').value||todayStr(),
-    session_type:document.getElementById('w-session-type').value||null,
-    exercises:exercises,
+    session_type:sessionType||null,
+    exercises:exercises.length?exercises:null,
+    cardio_type:cardio?sessionType:null,
+    cardio_duration_min:parseFloat(document.getElementById('c-duration').value)||null,
+    cardio_distance_km:parseFloat(document.getElementById('c-distance').value)||null,
+    cardio_notes:document.getElementById('c-notes').value||null,
     notes:document.getElementById('w-notes').value||null
   };
   const {error}=await db.from('workouts').insert(row);
   btn.disabled=false;btn.textContent='Save Workout ✓';
   if(error) showMsg('workout-msg','❌ Error: '+error.message,true);
-  else{showMsg('workout-msg','✅ Workout saved!');flash('Saved ✓');autoUpdatePRs(exercises);}
+  else{
+    showMsg('workout-msg','✅ Workout saved!');
+    flash('Saved ✓');
+    if(exercises.length) autoUpdatePRs(exercises);
+  }
 }
 
 // ===== AUTO PR UPDATE =====
@@ -499,21 +608,35 @@ async function autoUpdatePRs(exercises){
 
 // ===== LOAD WORKOUT HISTORY =====
 async function loadWorkoutHistory(){
-  const {data}=await db.from('workouts').select('*').order('workout_date',{ascending:false}).limit(20);
+  const {data}=await db.from('workouts').select('*').order('workout_date',{ascending:false}).limit(30);
   const el=document.getElementById('workout-history');
   if(!data?.length){el.innerHTML='<p style="color:#aaa;font-size:13px;">No workouts logged yet.</p>';return;}
   el.innerHTML=data.map(w=>{
-    const exList=(w.exercises||[]).filter(e=>e.name).map(e=>{
-      let s=e.name;
-      if(e.weight) s+=` ${e.weight}lbs`;
-      if(e.reps) s+=`×${e.reps}`;
-      if(e.sets&&e.sets>1) s+=`×${e.sets}`;
-      return s;
-    }).join(' · ');
-    return`<div class="log-entry">
-      <div class="log-date">${fmtDate(w.workout_date)} — ${w.session_type||'Workout'}</div>
-      <div class="log-detail">${exList||'Session logged'}${w.notes?`<br><em style="color:#888">${w.notes}</em>`:''}</div>
-    </div>`;
+    let detail='';
+    if(w.cardio_type){
+      const parts=[];
+      if(w.cardio_duration_min) parts.push(`⏱ ${w.cardio_duration_min} min`);
+      if(w.cardio_distance_km) parts.push(`📍 ${w.cardio_distance_km} km`);
+      if(w.cardio_duration_min&&w.cardio_distance_km){
+        const pace=w.cardio_duration_min/w.cardio_distance_km;
+        const pm=Math.floor(pace);const ps=Math.round((pace-pm)*60);
+        parts.push(`🏃 ${pm}:${ps.toString().padStart(2,'0')}/km`);
+        const met=w.cardio_type.toLowerCase().includes('run')?9.8:w.cardio_type.toLowerCase().includes('swim')?8.3:8;
+        parts.push(`🔥 ~${Math.round(met*73*(w.cardio_duration_min/60))} kcal`);
+      }
+      if(w.cardio_notes) parts.push(`<em>${w.cardio_notes}</em>`);
+      detail=parts.join(' · ')||'Cardio session';
+    } else {
+      detail=(w.exercises||[]).filter(e=>e.name).map(e=>{
+        let s=e.name;
+        if(e.weight) s+=` ${e.weight}lbs`;
+        if(e.reps) s+=`×${e.reps}`;
+        if(e.sets&&e.sets>1) s+=`×${e.sets}`;
+        return s;
+      }).join(' · ')||'Session logged';
+    }
+    if(w.notes) detail+=`<br><em style="color:#888">${w.notes}</em>`;
+    return`<div class="log-entry"><div class="log-date">${fmtDate(w.workout_date)} — ${w.session_type||'Workout'}</div><div class="log-detail">${detail}</div></div>`;
   }).join('');
 }
 
@@ -521,7 +644,7 @@ async function loadWorkoutHistory(){
 async function logWeight(){
   const val=parseFloat(document.getElementById('wt-val').value);
   const date=document.getElementById('wt-date').value||todayStr();
-  if(!val)return;
+  if(!val) return;
   await db.from('weight_log').upsert({log_date:date,weight:val},{onConflict:'log_date'});
   document.getElementById('wt-val').value='';
   flash('Weight logged ✓');
@@ -536,11 +659,10 @@ function addPRRow(name='',start='',best='',goal=''){
   row.className='pr-row';
   row.id=`pr-row-${id}`;
   row.innerHTML=`
-    <input type="text" id="pr-name-${id}" placeholder="Exercise" value="${name}">
-    <input type="number" id="pr-s-${id}" placeholder="lbs" value="${start}" style="text-align:center;">
-    <input type="number" id="pr-b-${id}" placeholder="lbs" value="${best}" style="text-align:center;">
-    <input type="number" id="pr-g-${id}" placeholder="lbs" value="${goal}" style="text-align:center;">
-  `;
+    <input type="text" id="prn-${id}" placeholder="Exercise" value="${name}">
+    <input type="number" id="prs-${id}" placeholder="lbs" value="${start}" style="text-align:center;">
+    <input type="number" id="prb-${id}" placeholder="lbs" value="${best}" style="text-align:center;">
+    <input type="number" id="prg-${id}" placeholder="lbs" value="${goal}" style="text-align:center;">`;
   document.getElementById('pr-rows').appendChild(row);
 }
 
@@ -548,10 +670,10 @@ async function savePRs(){
   const rows=document.querySelectorAll('#pr-rows .pr-row');
   for(const row of rows){
     const id=row.id.replace('pr-row-','');
-    const name=document.getElementById(`pr-name-${id}`)?.value?.trim();
-    const s=parseFloat(document.getElementById(`pr-s-${id}`)?.value)||null;
-    const b=parseFloat(document.getElementById(`pr-b-${id}`)?.value)||null;
-    const g=parseFloat(document.getElementById(`pr-g-${id}`)?.value)||null;
+    const name=document.getElementById(`prn-${id}`)?.value?.trim();
+    const s=parseFloat(document.getElementById(`prs-${id}`)?.value)||null;
+    const b=parseFloat(document.getElementById(`prb-${id}`)?.value)||null;
+    const g=parseFloat(document.getElementById(`prg-${id}`)?.value)||null;
     if(name) await db.from('personal_records').upsert({lift:name,start_weight:s,best_weight:b,goal_weight:g,updated_at:new Date().toISOString()},{onConflict:'lift'});
   }
   showMsg('pr-msg','✅ PRs saved!');
@@ -561,7 +683,7 @@ async function savePRs(){
 async function loadProgress(){
   const {data:weights}=await db.from('weight_log').select('*').order('log_date',{ascending:false}).limit(20);
   const wEl=document.getElementById('weight-list');
-  if(!weights?.length){wEl.innerHTML='<p style="color:#aaa;font-size:13px;">No entries yet.</p>';}
+  if(!weights?.length){wEl.innerHTML='<p style="color:#aaa;font-size:13px;">No entries yet. Log every Monday.</p>';}
   else{
     wEl.innerHTML=weights.map((w,i)=>{
       const prev=weights[i+1];let dh='';
@@ -569,9 +691,9 @@ async function loadProgress(){
       return`<div class="weight-entry"><span class="we-date">${fmtDate(w.log_date)}</span><span class="we-val">${w.weight} lbs</span>${dh}</div>`;
     }).join('');
     const sorted=[...weights].reverse();
-    const start=sorted[0].weight,current=sorted[sorted.length-1].weight,lost=(start-current).toFixed(1);
+    const start=sorted[0].weight,cur=sorted[sorted.length-1].weight,lost=(start-cur).toFixed(1);
     document.getElementById('s-start').textContent=start+' lbs';
-    document.getElementById('s-current').textContent=current+' lbs';
+    document.getElementById('s-current').textContent=cur+' lbs';
     document.getElementById('s-lost').textContent=lost>0?lost:'0';
   }
   const {data:logs}=await db.from('daily_logs').select('*').order('log_date',{ascending:false}).limit(10);
@@ -582,30 +704,26 @@ async function loadProgress(){
       const hc=l.habits?l.habits.filter(h=>h.checked).length:0;
       const ht=l.habits?l.habits.length:7;
       const d=[];
-      if(l.sleep_hours)d.push(`😴 ${l.sleep_hours}h`);
-      if(l.workout_type)d.push(`🏋️ ${l.workout_type}`);
-      if(l.weight)d.push(`⚖️ ${l.weight}lbs`);
-      if(l.meal_rating)d.push(`🥗 ${'⭐'.repeat(l.meal_rating)}`);
-      if(l.energy)d.push(`⚡ ${l.energy}/10`);
+      if(l.sleep_hours) d.push(`😴 ${l.sleep_hours}h`);
+      if(l.workout_type) d.push(`🏋️ ${l.workout_type}`);
+      if(l.weight) d.push(`⚖️ ${l.weight}lbs`);
+      if(l.meal_rating) d.push(`🥗 ${'⭐'.repeat(l.meal_rating)}`);
+      if(l.energy) d.push(`⚡ ${l.energy}/10`);
       d.push(`✅ ${hc}/${ht}`);
       return`<div class="log-entry"><div class="log-date">${fmtDate(l.log_date)}</div><div class="log-detail">${d.join(' · ')}</div></div>`;
     }).join('');
   }
-  // Load PRs
   const {data:prs}=await db.from('personal_records').select('*').order('lift');
-  document.getElementById('pr-rows').innerHTML='';
-  prCount=0;
+  document.getElementById('pr-rows').innerHTML='';prCount=0;
   if(prs?.length) prs.forEach(pr=>addPRRow(pr.lift,pr.start_weight||'',pr.best_weight||'',pr.goal_weight||''));
-  else{
-    ['Bench Press','Squat','Deadlift','Overhead Press','Bent-Over Row'].forEach(name=>addPRRow(name,'','',''));
-  }
+  else ['Bench Press','Squat','Deadlift','Overhead Press','Bent-Over Row'].forEach(n=>addPRRow(n,'','',''));
 }
 
 // ===== ADAPTIVE COACH =====
 async function loadCoach(){
   const [{data:weights},{data:workouts},{data:logs}]=await Promise.all([
     db.from('weight_log').select('*').order('log_date',{ascending:true}),
-    db.from('workouts').select('*').order('workout_date',{ascending:false}).limit(30),
+    db.from('workouts').select('*').order('workout_date',{ascending:false}).limit(40),
     db.from('daily_logs').select('*').order('log_date',{ascending:false}).limit(14)
   ]);
   renderCoach(weights||[],workouts||[],logs||[]);
@@ -613,15 +731,15 @@ async function loadCoach(){
 
 function renderCoach(weights,workouts,logs){
   // Weight trend
-  let wTrend='📊 No weight data yet. Log your weight every Monday to unlock adaptive coaching.';
+  let wTrend='📊 No weight data yet. Log every Monday morning to unlock adaptive coaching.';
   if(weights.length>=2){
     const lost=weights[0].weight-weights[weights.length-1].weight;
     const weeks=Math.max(1,weights.length-1);
     const wkLoss=lost/weeks;
     if(wkLoss>=0.5&&wkLoss<=1.5) wTrend=`✅ On track — averaging ${wkLoss.toFixed(1)} lbs/week. Keep doing exactly what you're doing.`;
-    else if(wkLoss>0&&wkLoss<0.5) wTrend=`⚠️ Progress slowing (${wkLoss.toFixed(1)} lbs/week). Tighten the lunch carb portion and enforce the 9pm food cutoff. These two moves will restart momentum.`;
-    else if(lost<=0) wTrend=`🔴 Weight not moving yet. Pick ONE this week: either fix lunch (half carbs, add protein) OR no food after 9pm. Just one — lock it in.`;
-    else wTrend=`🚀 ${lost.toFixed(1)} lbs lost. Make sure you're hitting 130g+ protein daily to protect muscle as weight drops.`;
+    else if(wkLoss>0&&wkLoss<0.5) wTrend=`⚠️ Slowing (${wkLoss.toFixed(1)} lbs/week). Tighten lunch carbs and enforce the 9pm food cutoff.`;
+    else if(lost<=0) wTrend=`🔴 Weight not moving. Pick ONE: fix lunch ratio OR no food after 9pm. Just one — lock it in this week.`;
+    else wTrend=`🚀 ${lost.toFixed(1)} lbs lost so far. Make sure you're hitting 130g+ protein daily to protect muscle.`;
   }
 
   // Sleep
@@ -630,8 +748,8 @@ function renderCoach(weights,workouts,logs){
     const sl=logs.filter(l=>l.sleep_hours);
     if(sl.length>0){
       const avg=sl.reduce((s,l)=>s+l.sleep_hours,0)/sl.length;
-      if(avg<6.5) sleepTip=`🔴 Averaging ${avg.toFixed(1)}h sleep. This is your biggest obstacle — bigger than diet or exercise right now. Growth hormone releases in hours 6–8. You're cutting it off every night. Set a phone alarm at 11pm: "Wind down NOW."`;
-      else if(avg<7) sleepTip=`⚠️ Averaging ${avg.toFixed(1)}h — close. Push bedtime 15 more minutes earlier this week. You're in the range where each extra 30 min makes a real difference.`;
+      if(avg<6.5) sleepTip=`🔴 Averaging ${avg.toFixed(1)}h — your biggest obstacle right now. Growth hormone releases in hours 6–8. You're cutting it off nightly. Action: phone alarm at 11pm labelled "Wind down NOW."`;
+      else if(avg<7) sleepTip=`⚠️ Averaging ${avg.toFixed(1)}h — push bedtime 15 min earlier this week.`;
       else sleepTip=`✅ Averaging ${avg.toFixed(1)}h — solid. Protect it. Don't let a heavy work week erode this.`;
     }
   }
@@ -640,22 +758,27 @@ function renderCoach(weights,workouts,logs){
   let nutTip='Log your meals to get personalised nutrition coaching.';
   if(logs.length>0){
     const snackDays=logs.filter(l=>l.snack&&l.snack.toLowerCase()!=='none'&&l.snack.trim()!=='').length;
-    const mealRatings=logs.filter(l=>l.meal_rating);
-    const avgMeal=mealRatings.length?mealRatings.reduce((s,l)=>s+l.meal_rating,0)/mealRatings.length:0;
-    if(snackDays>5) nutTip=`🔴 Late-night snacking ${snackDays} of ${logs.length} days logged. Put your phone charger in the kitchen — when you go to get it at 10pm, the kitchen is already closed. Physical friction breaks the habit loop.`;
-    else if(snackDays>2) nutTip=`⚠️ Late-night snacking ${snackDays} nights. For nights you do snack, make it protein — Greek yogurt or cottage cheese. Same craving, different metabolic response.`;
-    else if(avgMeal>=4) nutTip=`✅ Nutrition ${avgMeal.toFixed(1)}/5 — dialling in. Next focus: verify your lunch protein is genuinely substantial. A palm of cooked protein (100–150g) with every lunch.`;
-    else nutTip=`Key move this week: ask your wife to add a full palm of protein to whatever lunch she makes, and reduce the carb portion by half. Same meal, better ratio. Worth 3–4 lbs over 12 weeks.`;
+    const mr=logs.filter(l=>l.meal_rating);
+    const avgMeal=mr.length?mr.reduce((s,l)=>s+l.meal_rating,0)/mr.length:0;
+    if(snackDays>5) nutTip=`🔴 Late-night snacking ${snackDays}/${logs.length} days. Put your phone charger in the kitchen — walking to get it at 10pm means the kitchen is already closed. Physical friction breaks the loop.`;
+    else if(snackDays>2) nutTip=`⚠️ Late-night snacking ${snackDays} nights. When you do snack, make it protein — Greek yogurt or cottage cheese.`;
+    else if(avgMeal>=4) nutTip=`✅ Nutrition ${avgMeal.toFixed(1)}/5 — dialling in. Verify lunch protein is genuinely substantial: a full palm (100–150g cooked) every lunch.`;
+    else nutTip=`Key move: ask your wife to add a full palm of protein to lunch and reduce the carb portion by half. Same foods, better ratio. Worth 3–4 lbs over 12 weeks.`;
   }
 
-  // Workout progression + suggestions
-  let wkTip='Log 2+ workouts to unlock progression tracking.';
+  // Workout strength progression
+  let wkTip='Log workouts to unlock progression tracking.';
   let nextHTML='';
+  let cardioHTML='<p style="color:#aaa;font-size:13px;">Log cardio sessions to see trends here.</p>';
 
   if(workouts.length>0){
-    // Build exercise history map
+    // Build exercise history
     const exHistory={};
+    const cardioSessions=[];
     workouts.forEach(w=>{
+      if(w.cardio_type){
+        cardioSessions.push(w);
+      }
       (w.exercises||[]).forEach(ex=>{
         if(!ex.name||!ex.weight) return;
         if(!exHistory[ex.name]) exHistory[ex.name]=[];
@@ -663,73 +786,94 @@ function renderCoach(weights,workouts,logs){
       });
     });
 
-    // Check bench progression as proxy
-    const benchHistory=exHistory['Bench Press']||[];
-    if(benchHistory.length>=2){
-      const recent=benchHistory[0].weight;
-      const older=benchHistory[Math.min(2,benchHistory.length-1)].weight;
-      if(recent<=older) wkTip=`⚠️ Bench press hasn't moved in your last ${benchHistory.length} sessions at ${recent}lbs. Add 5 lbs next session — even if you only get 4 reps on the last set. That's the stimulus that drives chest and shoulder development.`;
-      else wkTip=`✅ Progressive overload is working — Bench moved from ${older} → ${recent} lbs. Keep adding 5 lbs every 2 sessions when you're hitting all target reps.`;
-    } else if(workouts.length>0){
-      wkTip=`You've logged ${workouts.length} session${workouts.length>1?'s':''}. Keep going — progression tracking kicks in after a few more logs.`;
+    // Strength tip from bench
+    const bench=exHistory['Bench Press'];
+    if(bench&&bench.length>=2){
+      const r=bench[0].weight,o=bench[Math.min(2,bench.length-1)].weight;
+      if(r<=o) wkTip=`⚠️ Bench hasn't moved in ${bench.length} sessions at ${r}lbs. Add 5 lbs next session — even 4 reps on the last set counts as progress.`;
+      else wkTip=`✅ Bench progressing: ${o} → ${r} lbs. Keep adding 5 lbs every 2 sessions when hitting all reps.`;
+    } else if(workouts.filter(w=>!w.cardio_type).length>0){
+      wkTip=`${workouts.filter(w=>!w.cardio_type).length} weight sessions logged. Keep going — progression tracking needs a few more logs.`;
     }
 
-    // Build suggestions from last session + progressions
+    // Suggest next weights
     const suggestions=[];
-    Object.entries(exHistory).slice(0,8).forEach(([name,history])=>{
-      const last=history[0];
-      const prev=history[1];
-      let targetWeight=last.weight;
-      let note='';
-      if(prev&&last.weight>prev.weight){note='↑ progressing';}
-      else if(prev&&last.weight===prev.weight){targetWeight=last.weight+5;note='→ try +5 lbs';}
-      suggestions.push({name,weight:targetWeight,reps:last.reps,sets:last.sets,note});
-    });
-
-    // Add key missing exercises if not already in history
-    const keyExercises=[
-      {name:'Face Pulls',weight:null,reps:15,sets:3,note:'← shoulder width key, do not skip'},
-      {name:'Lateral Raises',weight:null,reps:15,sets:3,note:'← builds shoulder width'},
-      {name:'Overhead Press',weight:null,reps:10,sets:3,note:'← primary shoulder builder'},
-    ];
-    keyExercises.forEach(ke=>{
-      if(!exHistory[ke.name]){
-        const fromHistory=exHistory[ke.name];
-        if(!fromHistory) suggestions.push(ke);
+    const keyOrder=['Bench Press','Overhead Press','Squat','Deadlift','Bent-Over Row','Face Pulls','Lateral Raises'];
+    keyOrder.forEach(name=>{
+      const h=exHistory[name];
+      if(h&&h.length>0){
+        const last=h[0],prev=h[1];
+        let tw=last.weight,note='';
+        if(prev&&last.weight===prev.weight){tw=last.weight+5;note='→ try +5 lbs';}
+        else if(prev&&last.weight>prev.weight){note='↑ progressing well';}
+        suggestions.push({name,weight:tw,reps:last.reps,sets:last.sets,note});
+      } else {
+        const defaults={
+          'Bench Press':{w:155,r:5,s:3,note:'baseline'},
+          'Overhead Press':{w:70,r:10,s:3,note:'start light — new movement'},
+          'Squat':{w:155,r:8,s:3,note:'baseline'},
+          'Deadlift':{w:155,r:5,s:3,note:'baseline'},
+          'Face Pulls':{w:null,r:15,s:3,note:'← shoulder width — do not skip'},
+          'Lateral Raises':{w:20,r:15,s:3,note:'← builds shoulder width'},
+        };
+        if(defaults[name]) suggestions.push({name,weight:defaults[name].w,reps:defaults[name].r,sets:defaults[name].s,note:defaults[name].note});
       }
     });
 
-    if(suggestions.length>0){
-      nextHTML=suggestions.map(s=>`
-        <div class="suggest-row">
-          <strong>${s.name}</strong>${s.weight?` — ${s.weight} lbs`:''}${s.reps?` × ${s.reps} reps`:''}${s.sets?` × ${s.sets} sets`:''}
-          ${s.note?`<div class="suggest-sub">${s.note}</div>`:''}
-        </div>`).join('');
-    } else {
-      nextHTML='<p style="color:#aaa;font-size:13px;">Log more workouts to get personalised suggestions.</p>';
+    nextHTML=suggestions.map(s=>`
+      <div class="suggest-row">
+        <strong>${s.name}</strong>${s.weight?` — ${s.weight} lbs`:''}${s.reps?` × ${s.reps} reps`:''}${s.sets?` × ${s.sets} sets`:''}
+        ${s.note?`<div class="suggest-sub">${s.note}</div>`:''}
+      </div>`).join('');
+
+    // Cardio trends
+    if(cardioSessions.length>0){
+      const byType={};
+      cardioSessions.forEach(s=>{
+        const t=s.cardio_type||'Other';
+        if(!byType[t]) byType[t]=[];
+        byType[t].push(s);
+      });
+      let cardioContent='';
+      Object.entries(byType).forEach(([type,sessions])=>{
+        const withDist=sessions.filter(s=>s.cardio_distance_km);
+        const withDur=sessions.filter(s=>s.cardio_duration_min);
+        const avgDist=withDist.length?withDist.reduce((s,w)=>s+w.cardio_distance_km,0)/withDist.length:null;
+        const avgDur=withDur.length?withDur.reduce((s,w)=>s+w.cardio_duration_min,0)/withDur.length:null;
+        const best=withDist.length?Math.max(...withDist.map(s=>s.cardio_distance_km)):null;
+        cardioContent+=`<div class="suggest-row">
+          <strong>${type}</strong> — ${sessions.length} session${sessions.length>1?'s':''}
+          <div class="suggest-sub">
+            ${avgDur?`Avg duration: ${Math.round(avgDur)} min`:''}
+            ${avgDist?` · Avg distance: ${avgDist.toFixed(1)} km`:''}
+            ${best?` · Best: ${best} km`:''}
+          </div>
+        </div>`;
+      });
+      cardioHTML=cardioContent;
     }
   } else {
     nextHTML=`
-      <div class="suggest-row"><strong>Bench Press</strong> — 155 lbs × 5 reps × 3 sets<div class="suggest-sub">Your starting baseline</div></div>
-      <div class="suggest-row"><strong>Overhead Press</strong> — 65–75 lbs × 10 reps × 3 sets<div class="suggest-sub">New movement — start light, form first</div></div>
-      <div class="suggest-row"><strong>Squat</strong> — 155 lbs × 8 reps × 3 sets</div>
-      <div class="suggest-row"><strong>Deadlift</strong> — 155 lbs × 5 reps × 3 sets</div>
-      <div class="suggest-row"><strong>Face Pulls</strong> — 3 × 15 reps<div class="suggest-sub">← shoulder width key, do not skip</div></div>
-      <div class="suggest-row"><strong>Lateral Raises</strong> — 15–20 lbs × 3 × 15<div class="suggest-sub">← builds shoulder width visually</div></div>`;
-    wkTip='Start logging workouts and the coach will suggest target weights based on your actual history.';
+      <div class="suggest-row"><strong>Bench Press</strong> — 155 lbs × 5 × 3<div class="suggest-sub">Your starting baseline</div></div>
+      <div class="suggest-row"><strong>Overhead Press</strong> — 65–75 lbs × 10 × 3<div class="suggest-sub">New movement — start light, form first</div></div>
+      <div class="suggest-row"><strong>Squat</strong> — 155 lbs × 8 × 3</div>
+      <div class="suggest-row"><strong>Deadlift</strong> — 155 lbs × 5 × 3</div>
+      <div class="suggest-row"><strong>Face Pulls</strong> — 3 × 15<div class="suggest-sub">← shoulder width key, do not skip</div></div>
+      <div class="suggest-row"><strong>Lateral Raises</strong> — 20 lbs × 3 × 15<div class="suggest-sub">← builds shoulder width visually</div></div>`;
   }
 
   document.getElementById('coach-main').innerHTML=`
     <h2>🤖 This Week's Analysis</h2>
     <div class="coach-item"><div class="coach-label">Weight Trend</div>${wTrend}</div>
-    <div class="coach-item"><div class="coach-label">Training Progression</div>${wkTip}</div>
+    <div class="coach-item"><div class="coach-label">Strength Progression</div>${wkTip}</div>
     <div class="coach-item"><div class="coach-label">Nutrition</div>${nutTip}</div>`;
-  document.getElementById('coach-workout').innerHTML=`<h2>💪 Suggested Exercises & Target Weights</h2>${nextHTML}`;
+  document.getElementById('coach-workout').innerHTML=`<h2>💪 Suggested Weights — Next Session</h2>${nextHTML}`;
+  document.getElementById('coach-cardio').innerHTML=`<h2>🏃 Cardio Trends</h2>${cardioHTML}`;
   document.getElementById('coach-sleep').innerHTML=`<h2>😴 Sleep & Recovery</h2><p style="font-size:13px;line-height:1.8;">${sleepTip}</p>`;
-  document.getElementById('coach-nutrition').innerHTML=`<h2>🥗 Nutrition Focus This Week</h2><p style="font-size:13px;line-height:1.8;">${nutTip}</p>`;
+  document.getElementById('coach-nutrition').innerHTML=`<h2>🥗 Nutrition Focus</h2><p style="font-size:13px;line-height:1.8;">${nutTip}</p>`;
 }
 
-// ===== INIT =====
+// Init
 initWorkoutLog();
 </script>
 </body>
